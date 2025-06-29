@@ -2,8 +2,15 @@ function displayTemperature(response) {
   let temperatureElement = document.querySelector("#current-temperature");
   let temperature = Math.round(response.data.temperature.current);
   let cityElement = document.querySelector("#current-city");
+  let conditionElement = document.querySelector("#current-condition");
+  let humidityElement = document.querySelector("#current-humidity");
+  let windElement = document.querySelector("#current-wind");
+  
   cityElement.innerHTML = response.data.city;
   temperatureElement.innerHTML = temperature;
+  conditionElement.innerHTML = response.data.condition.description;
+  humidityElement.innerHTML = response.data.temperature.humidity;
+  windElement.innerHTML = Math.round(response.data.wind.speed);
 }
 
 function search(event) {
